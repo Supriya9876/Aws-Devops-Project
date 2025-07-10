@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: project
+  labels:
+    app: backdeploy
+spec:
+  type: LoadBalancer
+  selector:
+    app: backdeploy
+  ports:
+    - port: 8080         # The port exposed within the cluster
+      targetPort: 8080   # The port your Spring Boot app listens on

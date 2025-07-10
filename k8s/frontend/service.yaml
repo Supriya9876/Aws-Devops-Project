@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontservice
+  namespace: project
+  labels:
+    app: frontdeploy
+    tier: frontend
+spec:
+  type: LoadBalancer
+  selector:
+    app: frontdeploy
+  ports:
+    - port: 80         # Service port exposed inside the cluster
+      targetPort: 80   # Container port inside the frontend pod

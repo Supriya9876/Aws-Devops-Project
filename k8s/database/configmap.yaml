@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: project
+data:
+  DB_URL: jdbc:mysql://expense.cluster-cz8gii8scoo5.us-east-1.rds.amazonaws.com:3306/expenses

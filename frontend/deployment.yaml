@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: fdeploy
+  name: fdeploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fdeploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: fdeploy
+    spec:
+      containers:
+      - image: 026090545815.dkr.ecr.us-east-1.amazonaws.com/projectfront
+        name: projectfront
+        resources: {}
+status: {}

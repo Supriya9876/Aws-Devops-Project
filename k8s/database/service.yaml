@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-backend
+  namespace: project
+  labels:
+    app: springboot-backend
+    tier: backend
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080          # Port exposed internally to other services
+      targetPort: 8080    # Port your Spring Boot app listens on inside the pod
+      protocol: TCP
+  selector:
+    app: springboot-backend

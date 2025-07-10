@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: frontdeploy
+  name: frontdeploy
+  namespace: project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontdeploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: frontdeploy
+    spec:
+      containers:
+      - image: 535002878565.dkr.ecr.us-east-1.amazonaws.com/three-tier-frontend:latest
+        name: projectfront
+        resources: {}
+status: {}
